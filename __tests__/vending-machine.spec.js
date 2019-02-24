@@ -32,18 +32,18 @@ describe("Vending Machine", () => {
 
   describe("purchase an item with more change than needed", () => {
     test("returns product name and change for item", () => {
-      const result = item.buyItem("c4", 1.0);
+      const result = item.buyItem("c4", 4.0);
       expect(result).toEqual({
         name: "Potato",
-        change: ["QUARTERS", 6]
+        change: [["TOONIES", 1], ["LOONIES", 1], ["QUARTERS", 2]]
       });
     });
   });
 
-  describe("purchase item with incorrect currency", () => {
-    test("returns the currency given", () => {
-      const result = item.buyItem(" a1", "pens");
-      expect(result).toEqual("pens");
+  describe("purchase item that does not exist", () => {
+    test("returns item does not exist", () => {
+      const result = item.buyItem("r2");
+      expect(result).toEqual("this item does not exist");
     });
   });
 
@@ -51,16 +51,16 @@ describe("Vending Machine", () => {
     test("returns list of current coins", () => {
       const result = item.checkCurrentChange();
       expect(result).toEqual([
-        ["QUARTERS", 33.5],
-        ["LOONIES", 40.0],
-        ["TOONIES", 50.0]
+        ["QUARTERS", 33],
+        ["LOONIES", 39.0],
+        ["TOONIES", 48.0]
       ]);
     });
   });
 
   describe("resuply coins in vending machine", () => {
     test("returns list of resuplied coins", () => {
-      const result = item.resuplyChange();
+      const result = item.resupplyChange();
       expect(result).toEqual([
         ["QUARTERS", 50.0],
         ["LOONIES", 60.0],
@@ -89,7 +89,7 @@ describe("Vending Machine", () => {
 
   describe("restock items in vending machine", () => {
     test("return list of new stock of items", () => {
-      const result = item.resuplyStock();
+      const result = item.resupplyStock();
       expect(result).toEqual([
         "Chips: 10",
         "Candy: 15",

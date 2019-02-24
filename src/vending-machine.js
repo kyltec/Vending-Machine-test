@@ -9,9 +9,9 @@ class VendingMachine {
     let amountOwed = cost - price;
     if (amountOwed === 0) return 0;
     const VALUES = [
-      { name: " QUARTER", val: 0.25 },
-      { name: "LOONIE", val: 1.0 },
-      { name: "TOONIE", val: 2.0 }
+      { name: "TOONIES", val: 2.0 },
+      { name: "LOONIES", val: 1.0 },
+      { name: "QUARTERS", val: 0.25 }
     ];
 
     const vendingChange = change.reduce((acc, currency) => {
@@ -41,35 +41,11 @@ class VendingMachine {
     return coins;
   }
 
-  buyItem(item, cost) {
-    if (this.stock[item].inventory === 0) {
-      return "out of stock";
-    } else if (!cost) {
-      return {
-        name: this.stock[item].name,
-        change: this.stock[item].price
-      };
-    } else if (typeof cost !== "number" || cost > 10 || cost < 0.05) {
-      return cost;
-    } else if (this.stock[item].price - cost > 0) {
-      const excess = this.stock[item].price - cost;
-      return {
-        name: this.stock[item].name,
-        change: excess
-      };
-    }
-    this.stock[item].inventory--;
-    return {
-      name: this.stock[item].name,
-      change: this.calChange(this.change.current, this.stock[item].price, cost)
-    };
-  }
-
   checkCurrentChange() {
     return this.change.current;
   }
 
-  resuplyChange() {
+  resupplyChange() {
     this.change.max.forEach((change, index) => {
       this.change.current[index] = change;
     });
@@ -85,7 +61,7 @@ class VendingMachine {
     return inv;
   }
 
-  resuplyStock() {
+  resupplyStock() {
     let inv = [];
     const indexArr = Object.keys(this.stock);
     indexArr.forEach(stock => {
@@ -93,6 +69,30 @@ class VendingMachine {
       inv.push(`${this.stock[stock].name}: ${this.stock[stock].inventory}`);
     });
     return inv;
+  }
+
+  buyItem(item, cost) {
+    if (!this.stock[item]) {
+      return "this item does not exist";
+    } else if (this.stock[item].inventory === 0) {
+      return "out of stock";
+    } else if (!cost) {
+      return {
+        name: this.stock[item].name,
+        change: this.stock[item].price
+      };
+    } else if (this.stock[item].price - cost > 0) {
+      const excess = this.stock[item].price - cost;
+      return {
+        name: this.stock[item].name,
+        change: excess
+      };
+    }
+    this.stock[item].inventory--;
+    return {
+      name: this.stock[item].name,
+      change: this.calChange(this.change.current, this.stock[item].price, cost)
+    };
   }
 }
 
