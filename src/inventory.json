@@ -73,7 +73,7 @@
   },
 
   "change": {
-    "amount": [["QUARTERS", 33.5], ["LOONIES", 40.0], ["TOONIES", 50.0]],
-    "total": [["QUARTERS", 50.0], ["LOONIES", 60.0], ["TOONIES", 100.0]]
+    "current": [["QUARTERS", 33.5], ["LOONIES", 40.0], ["TOONIES", 50.0]],
+    "max": [["QUARTERS", 50.0], ["LOONIES", 60.0], ["TOONIES", 100.0]]
   }
 }
