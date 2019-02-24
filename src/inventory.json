@@ -1,0 +1,79 @@
+{
+  "stock": {
+    "a1": {
+      "name": "Chips",
+      "price": 2.25,
+      "inventory": 10,
+      "maxInv": 10
+    },
+
+    "a2": {
+      "name": "Candy",
+      "price": 1.0,
+      "inventory": 10,
+      "maxInv": 15
+    },
+
+    "a3": {
+      "name": "Pop",
+      "price": 1.5,
+      "inventory": 10,
+      "maxInv": 10
+    },
+
+    "b1": {
+      "name": "Water",
+      "price": 1.25,
+      "code": "B1",
+      "inventory": 0,
+      "maxInv": 10
+    },
+
+    "b2": {
+      "name": "Fruit",
+      "price": 1.5,
+      "inventory": 10,
+      "maxInv": 10
+    },
+
+    "b3": {
+      "name": "Coffee",
+      "price": 1.0,
+      "inventory": 10,
+      "maxInv": 20
+    },
+
+    "c1": {
+      "name": "Cookie",
+      "price": 1.25,
+      "inventory": 10,
+      "maxInv": 30
+    },
+
+    "c2": {
+      "name": "Energy Drink",
+      "price": 2.5,
+      "inventory": 10,
+      "maxInv": 10
+    },
+
+    "c3": {
+      "name": "Instant Noodles",
+      "price": 1.0,
+      "inventory": 10,
+      "maxInv": 10
+    },
+
+    "c4": {
+      "name": "Potato",
+      "price": 0.5,
+      "inventory": 10,
+      "maxInv": 14
+    }
+  },
+
+  "change": {
+    "amount": [["QUARTERS", 33.5], ["LOONIES", 40.0], ["TOONIES", 50.0]],
+    "total": [["QUARTERS", 50.0], ["LOONIES", 60.0], ["TOONIES", 100.0]]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "vending-machine-p3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jest-cli": "^24.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyltec/Vending-Machine-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyltec/Vending-Machine-test/issues"
+  },
+  "homepage": "https://github.com/kyltec/Vending-Machine-test#readme"
+}
