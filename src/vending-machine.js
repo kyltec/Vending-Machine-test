@@ -53,18 +53,19 @@ class VendingMachine {
   }
 
   checkCurrentStock() {
-    let inv = [];
-    const indexArr = Object.keys(this.stock);
-    indexArr.forEach(stock => {
+    const inv = [];
+    const allItems = Object.keys(this.stock);
+    allItems.forEach(stock => {
       inv.push(`${this.stock[stock].name}: ${this.stock[stock].inventory}`);
     });
+    console.log(inv);
     return inv;
   }
 
   resupplyStock() {
-    let inv = [];
-    const indexArr = Object.keys(this.stock);
-    indexArr.forEach(stock => {
+    const inv = [];
+    const allItems = Object.keys(this.stock);
+    allItems.forEach(stock => {
       this.stock[stock].inventory = this.stock[stock].maxInv;
       inv.push(`${this.stock[stock].name}: ${this.stock[stock].inventory}`);
     });
