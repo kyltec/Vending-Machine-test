@@ -1,6 +1,6 @@
 # Vending-Machine-test
 
-This is a virtual vending machine created as a mock interview question
+(ADP: P3)A coding interview question by creating a vending machine
 
 ## Running Tests
 
@@ -13,6 +13,11 @@ This is a virtual vending machine created as a mock interview question
 ## Screenshots
 
 <img src="./test-results.png" width="700px" height="400">
+
+## Technology Used
+
+- Jest
+- JavaScript
 
 ## Author
 
