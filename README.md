@@ -4,6 +4,8 @@
 
 ## Running Tests
 
+- Clone/download repo
+
 ```bash
    cd into directory
    npm install
