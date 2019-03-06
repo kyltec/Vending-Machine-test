@@ -58,16 +58,16 @@ class VendingMachine {
     allItems.forEach(stock => {
       inv.push(`${this.stock[stock].name}: ${this.stock[stock].inventory}`);
     });
-    console.log(inv);
+    // console.log(inv);
     return inv;
   }
 
   resupplyStock() {
     const inv = [];
     const allItems = Object.keys(this.stock);
-    allItems.forEach(stock => {
-      this.stock[stock].inventory = this.stock[stock].maxInv;
-      inv.push(`${this.stock[stock].name}: ${this.stock[stock].inventory}`);
+    allItems.forEach(item => {
+      this.stock[item].inventory = this.stock[item].maxInv;
+      inv.push(`${this.stock[item].name}: ${this.stock[item].inventory}`);
     });
     return inv;
   }

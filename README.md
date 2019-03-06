@@ -14,7 +14,7 @@
 
 ## Screenshots
 
-<img src="./test-results.png" width="700px" height="400">
+<img src="./test-results.png" width="500" height="400">
 
 ## Technology Used
 
