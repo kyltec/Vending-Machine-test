@@ -18,15 +18,15 @@ describe("Vending Machine", () => {
 
   describe("purchase item with not enough change", () => {
     it("should return the product name and the remaining change needed", () => {
-      const result = VendingMachine.buyItem("a1", 2.0);
-      expect(result).toEqual({ name: "Chips", change: 0.25 });
+      const result = VendingMachine.buyItem("c3", 0.75);
+      expect(result).toEqual({ name: "Instant Noodles", change: 0.25 });
     });
   });
 
   describe("purchase an item with exact change", () => {
     it("should return the product name and no change", () => {
-      const result = VendingMachine.buyItem("a2", 1.0);
-      expect(result).toEqual({ name: "Candy", change: 0 });
+      const result = VendingMachine.buyItem("c2", 2.5);
+      expect(result).toEqual({ name: "Energy Drink", change: 0 });
     });
   });
 
@@ -74,13 +74,13 @@ describe("Vending Machine", () => {
       const result = VendingMachine.checkCurrentStock();
       expect(result).toEqual([
         "Chips: 10",
-        "Candy: 9",
+        "Candy: 10",
         "Pop: 10",
         "Water: 0",
         "Fruit: 10",
         "Coffee: 10",
         "Cookie: 10",
-        "Energy Drink: 10",
+        "Energy Drink: 9",
         "Instant Noodles: 10",
         "Potato: 9"
       ]);
