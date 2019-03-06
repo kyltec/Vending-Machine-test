@@ -24,14 +24,14 @@ describe("Vending Machine", () => {
   });
 
   describe("purchase an item with exact change", () => {
-    it("returns product name and no change", () => {
+    it("should return the product name and no change", () => {
       const result = VendingMachine.buyItem("a2", 1.0);
       expect(result).toEqual({ name: "Candy", change: 0 });
     });
   });
 
   describe("purchase an item with more change than needed", () => {
-    it("returns product name and change for item in coins", () => {
+    it("should return the product name and change for item in coins", () => {
       const result = VendingMachine.buyItem("c4", 4.0);
       expect(result).toEqual({
         name: "Potato",
@@ -41,14 +41,14 @@ describe("Vending Machine", () => {
   });
 
   describe("purchase item that does not exist", () => {
-    it("returns item does not exist", () => {
+    it("should return this item does not exist", () => {
       const result = VendingMachine.buyItem("r2");
       expect(result).toEqual("this item does not exist");
     });
   });
 
   describe("checking vending machine coins", () => {
-    it("returns list of current coins", () => {
+    it("should return a list that shows the current quantity of coins", () => {
       const result = VendingMachine.checkCurrentChange();
       expect(result).toEqual([
         ["QUARTERS", 33],
@@ -59,7 +59,7 @@ describe("Vending Machine", () => {
   });
 
   describe("resuply coins in vending machine", () => {
-    it("returns list of resuplied coins", () => {
+    it("should return a list of resupplied coins ", () => {
       const result = VendingMachine.resupplyChange();
       expect(result).toEqual([
         ["QUARTERS", 50.0],
@@ -70,7 +70,7 @@ describe("Vending Machine", () => {
   });
 
   describe("check current stock of items in vending machine", () => {
-    it("returns list of items and thier inventory", () => {
+    it("should return a list of items and thier inventory", () => {
       const result = VendingMachine.checkCurrentStock();
       expect(result).toEqual([
         "Chips: 10",
@@ -88,7 +88,7 @@ describe("Vending Machine", () => {
   });
 
   describe("restock items in vending machine", () => {
-    it("return list of new stock of items", () => {
+    it("should return a list of items at their new stock", () => {
       const result = VendingMachine.resupplyStock();
       expect(result).toEqual([
         "Chips: 10",

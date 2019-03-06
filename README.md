@@ -1,11 +1,11 @@
 # Vending-Machine-test
 
-(ADP: P3)A coding interview question by creating a vending machine
+(ADP: P3) A coding interview question by creating a vending machine
 
 ## Running Tests
 
 ```bash
-    cd into directory
+   cd into directory
    npm install
    npm test
 ```
